@@ -2,15 +2,14 @@
 
 Sitio web oficial de **Home Cooking Cuenca** (<https://homecookingcuenca.com>).
 
-🚧 **El sitio está en construcción.** Este repo se usa para llevar el código del sitio web y registrar los cambios a medida que se vaya armando.
+Sitio estático (HTML/CSS/JS, sin build). Instrucciones de hosting manual en `README.txt`.
+WhatsApp y URL de pedidos se editan en `js/config.js`.
 
-## Estado
+## Correr con Docker
 
-Vacío. Próximamente:
-- Landing con carta / menú
-- Sistema de pedidos
-- Galería
-- Integración WhatsApp
+```bash
+docker compose up -d --build   # http://localhost:3940
+```
 
 ## Mantenedor
 

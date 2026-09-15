@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Cooking Cuenca — Thursday & Sunday delivery</title>
+  <meta name="description" content="Weekly meal plans and individual dishes, prepared in a commercial kitchen in Cuenca. Delivered Thursday and Sunday.">
+  <meta name="theme-color" content="#4A1512">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Home Cooking Cuenca">
+  <meta property="og:description" content="Home delivery from a commercial kitchen in Cuenca. Thursday and Sunday.">
+  <meta property="og:image" content="og.jpg">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="house" viewBox="0 0 80 72" fill="none">
+      <path d="M14 34 L40 12 L66 34" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M20 31.5 V58 H60 V31.5" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"/>
+      <path d="M54 20 V12 H62" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M58 8 C58 8 61 4 64 8 M63 8 C63 8 66 4 69 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <rect x="34" y="24" width="12" height="12" stroke="currentColor" stroke-width="2.4"/>
+      <path d="M40 24 V36 M34 30 H46" stroke="currentColor" stroke-width="2"/>
+      <path d="M28 58 L40 44 L52 58" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#top" aria-label="Home Cooking Cuenca">
+        <svg><use href="#house"></use></svg>
+        <span><span class="logo-name">Home Cooking</span><span class="logo-city">Cuenca</span></span>
+      </a>
+      <nav class="nav-desk" data-i18n-aria="navPrimary" aria-label="Primary">
+        <a href="#menu" data-i18n="navMenu">Menu</a>
+        <a href="#how" data-i18n="navHow">How it works</a>
+        <a href="#kitchen" data-i18n="navKitchen">The kitchen</a>
+        <a href="#rosa" data-i18n="navRosa">Rosa</a>
+      </nav>
+      <div class="header-actions">
+        <div class="lang" role="group" data-i18n-aria="langToggle" aria-label="Language">
+          <button type="button" data-locale="en" aria-pressed="true">EN</button>
+          <button type="button" data-locale="es" aria-pressed="false">ES</button>
+        </div>
+        <button type="button" class="btn btn-bone header-cta" data-open-order data-i18n="orderCta">Place an order</button>
+        <button type="button" class="menu-btn" id="menu-btn" data-i18n-aria="openMenu" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+    <nav class="nav-mob wrap" id="nav-mob" data-i18n-aria="navMobile">
+      <a href="#menu" data-i18n="navMenu">Menu</a>
+      <a href="#how" data-i18n="navHow">How it works</a>
+      <a href="#kitchen" data-i18n="navKitchen">The kitchen</a>
+      <a href="#rosa" data-i18n="navRosa">Rosa</a>
+      <button type="button" class="btn btn-bone btn-full" style="margin-top:.5rem" data-open-order data-i18n="orderCta">Place an order</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker" data-i18n="heroKicker">Cuenca · Home delivery</p>
+          <h1><span data-i18n="heroTitle">Thursday and Sunday dinner,</span><em data-i18n="heroTitleEm"> without the cooking.</em></h1>
+          <p class="hero-lead" data-i18n="heroLead"></p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-bone btn-lg" data-open-order data-i18n="orderThisWeek">Order this week</button>
+            <a class="btn btn-ghost btn-lg" href="#menu" data-i18n="seeMenu">See the menu</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="img/hero.jpg" data-i18n-alt="heroAlt" alt="">
+          <div class="hero-chip">
+            <svg><use href="#house"></use></svg>
+            <p style="margin:0" data-i18n="heroPack"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip">
+      <div class="wrap strip-grid">
+        <div><p class="kicker" data-i18n="runThu"></p><p class="strip-val" data-i18n="runThuDue"></p></div>
+        <div><p class="kicker" data-i18n="runSun"></p><p class="strip-val" data-i18n="runSunDue"></p></div>
+        <div><p class="kicker" data-i18n="preparedIn"></p><p class="strip-val" data-i18n="commercialKitchen"></p></div>
+      </div>
+    </div>
+
+    <section class="quote-sec">
+      <p class="kicker" data-i18n="noteFromKitchen"></p>
+      <blockquote>“<span data-i18n="quote"></span>”</blockquote>
+      <p class="quote-by">— Rosa Saldaño, Cuenca</p>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="wrap">
+        <div class="menu-head">
+          <div>
+            <p class="kicker" data-i18n="thisWeek"></p>
+            <h2 data-i18n="menuTitle"></h2>
+          </div>
+          <p class="menu-lead" data-i18n="menuLead"></p>
+        </div>
+        <article class="plan">
+          <img src="img/seco.jpg" alt="Seco de pollo">
+          <div class="plan-body">
+            <div>
+              <p class="plan-kicker" data-plan-price></p>
+              <h3 data-i18n="weeklyPlanName"></h3>
+              <p data-i18n="weeklyPlanDesc"></p>
+              <ol id="plan-dinners"></ol>
+            </div>
+            <button type="button" class="btn btn-oxblood" style="margin-top:2rem;width:100%" data-open-order data-i18n="addWeekly"></button>
+          </div>
+        </article>
+        <div class="chips">
+          <button type="button" class="chip active" data-filter="all" data-i18n="allDishes"></button>
+          <button type="button" class="chip" data-filter="soup" data-i18n="catSoup"></button>
+          <button type="button" class="chip" data-filter="salad" data-i18n="catSalad"></button>
+          <button type="button" class="chip" data-filter="entree" data-i18n="catEntree"></button>
+          <button type="button" class="chip" data-filter="side" data-i18n="catSide"></button>
+          <button type="button" class="chip" data-filter="dessert" data-i18n="catDessert"></button>
+        </div>
+        <div class="dishes" id="dishes"></div>
+      </div>
+    </section>
+
+    <section class="how" id="how">
+      <div class="wrap">
+        <p class="kicker" data-i18n="howKicker"></p>
+        <h2 data-i18n="howTitle"></h2>
+        <div class="how-grid">
+          <div class="how-card"><p class="step">01</p><h3 data-i18n="how1Title"></h3><p data-i18n="how1Body"></p></div>
+          <div class="how-card"><p class="step">02</p><h3 data-i18n="how2Title"></h3><p data-i18n="how2Body"></p></div>
+          <div class="how-card"><p class="step">03</p><h3 data-i18n="how3Title"></h3><p data-i18n="how3Body"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kitchen" id="kitchen">
+      <div class="wrap">
+        <p class="kicker" data-i18n="kitchenKicker"></p>
+        <h2 data-i18n="kitchenTitle"></h2>
+        <img class="kitchen-hero" src="img/kitchen.jpg" data-i18n-alt="kitchenAlt" alt="">
+        <div class="kitchen-split">
+          <ul class="points">
+            <li><div><strong data-i18n="k1Title"></strong><span data-i18n="k1Body"></span></div></li>
+            <li><div><strong data-i18n="k2Title"></strong><span data-i18n="k2Body"></span></div></li>
+            <li><div><strong data-i18n="k3Title"></strong><span data-i18n="k3Body"></span></div></li>
+            <li><div><strong data-i18n="k4Title"></strong><span data-i18n="k4Body"></span></div></li>
+          </ul>
+          <img class="packs" src="img/packs.jpg" data-i18n-alt="packsAlt" alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="rosa" id="rosa">
+      <div class="wrap rosa-inner">
+        <p class="kicker" data-i18n="rosaHello"></p>
+        <h2 data-i18n="rosaTitle"></h2>
+        <div class="rosa-copy">
+          <p data-i18n="rosaP1"></p>
+          <p data-i18n="rosaP2"></p>
+          <p data-i18n="rosaP3"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wa" id="order-info">
+      <div class="wrap wa-grid">
+        <div>
+          <p class="kicker" data-i18n="waKicker"></p>
+          <h2 data-i18n="waTitle"></h2>
+          <p class="wa-lead" data-i18n="waLead"></p>
+          <div class="wa-actions">
+            <button type="button" class="btn btn-bone btn-lg" data-open-order data-i18n="composeOrder"></button>
+            <a class="btn btn-ghost btn-lg" id="open-store" hidden data-i18n="openStore"></a>
+            <span class="soon" id="store-soon" data-i18n="storeSoon"></span>
+          </div>
+        </div>
+        <div class="wa-mark">
+          <img src="img/logo-whatsapp.jpg" data-i18n-alt="waMarkAlt" alt="">
+          <p class="wa-cap" data-i18n="waAvatar"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="logo" href="#top">
+        <svg><use href="#house"></use></svg>
+        <span><span class="logo-name">Home Cooking</span><span class="logo-city">Cuenca</span></span>
+      </a>
+      <div class="footer-meta">
+        <p data-i18n="footerThu"></p>
+        <p data-i18n="footerSun"></p>
+        <p>Cuenca, Ecuador · Rosa Saldaño</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="order">
+    <button type="button" class="overlay-bg" data-close-order data-i18n-aria="closePanel"></button>
+    <aside class="panel" role="dialog" aria-labelledby="order-title">
+      <div class="panel-head">
+        <div>
+          <p class="kicker" data-i18n="orderTwoRuns"></p>
+          <h2 id="order-title" data-i18n="orderTitle"></h2>
+        </div>
+        <button type="button" class="icon-btn" data-close-order data-i18n-aria="close">✕</button>
+      </div>
+      <div class="panel-body">
+        <p class="kicker" data-i18n="deliveryDay"></p>
+        <div class="runs">
+          <button type="button" class="run active" data-run="thursday"><span id="run-thu-label"></span><small id="run-thu-due"></small></button>
+          <button type="button" class="run" data-run="sunday"><span id="run-sun-label"></span><small id="run-sun-due"></small></button>
+        </div>
+        <label class="plan-check">
+          <input type="checkbox" id="plan-check" checked>
+          <span><strong id="plan-name"></strong><br><span data-i18n="planBox" style="font-weight:400;color:var(--muted);font-size:.9rem"></span></span>
+        </label>
+        <p class="kicker" style="margin-top:1.5rem" data-i18n="addItems"></p>
+        <ul id="order-items" style="list-style:none;padding:0;margin:0"></ul>
+        <label class="field"><span data-i18n="yourName"></span><input id="f-name" autocomplete="name"></label>
+        <label class="field"><span data-i18n="neighborhood"></span><input id="f-area" data-i18n-placeholder="areaPh"></label>
+        <label class="field"><span data-i18n="howMany"></span><input id="f-servings" value="1"></label>
+        <label class="field"><span data-i18n="notes"></span><textarea id="f-notes" data-i18n-placeholder="notesPh"></textarea></label>
+      </div>
+      <div class="panel-foot">
+        <p class="hint" id="checkout-hint"></p>
+        <button type="button" class="btn btn-oxblood btn-full" id="wa-primary"></button>
+        <button type="button" class="btn btn-outline btn-full" id="copy-msg" style="margin-top:.5rem" data-i18n="copyMsg"></button>
+      </div>
+    </aside>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/site.js"></script>
+</body>
+</html>

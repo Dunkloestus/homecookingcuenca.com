@@ -1,0 +1,7 @@
+services:
+  web:
+    build: .
+    container_name: homecookingcuenca-web
+    restart: unless-stopped
+    ports:
+      - "3940:80"
