@@ -48,6 +48,7 @@
       if (soon) soon.hidden = false;
       if (store) store.hidden = true;
     }
+    if (window.HCC_SITE.onApply) window.HCC_SITE.onApply();
   }
 
   function renderDinners() {
@@ -81,6 +82,7 @@
   }
 
   function renderOrderLabels() {
+    if (window.HCC_LIVE && window.HCC_LIVE.active) return; /* order-live.js renders the panel */
     var d = t();
     document.getElementById("run-thu-label").textContent = d.deliveryThu;
     document.getElementById("run-thu-due").textContent = d.due + " " + d.dueTue;
@@ -137,8 +139,8 @@
     return lines.join("\n");
   }
 
-  function copyMsg() {
-    var text = buildMessage();
+  function copyMsg(text) {
+    if (typeof text !== "string") text = buildMessage();
     var d = t();
     function done() {
       var b = document.getElementById("copy-msg");
@@ -152,8 +154,8 @@
     }
   }
 
-  function sendWa() {
-    var text = buildMessage();
+  function sendWa(text) {
+    if (typeof text !== "string") text = buildMessage();
     if (cfg.whatsappNumber) {
       window.open("https://wa.me/" + cfg.whatsappNumber + "?text=" + encodeURIComponent(text), "_blank", "noopener");
     } else {
@@ -196,8 +198,12 @@
   document.getElementById("plan-check").addEventListener("change", function (e) {
     planOn = e.target.checked;
   });
-  document.getElementById("wa-primary").addEventListener("click", sendWa);
-  document.getElementById("copy-msg").addEventListener("click", copyMsg);
+  /* Online ordering (js/order-live.js) takes over these buttons when the kitchen is reachable;
+     otherwise this WhatsApp flow is the legacy fallback. */
+  function live() { return window.HCC_LIVE && window.HCC_LIVE.active ? window.HCC_LIVE : null; }
+  document.getElementById("wa-primary").addEventListener("click", function () { live() ? live().primary() : sendWa(); });
+  document.getElementById("copy-msg").addEventListener("click", function () { live() ? live().whatsapp() : copyMsg(); });
 
+  window.HCC_SITE = { locale: function () { return locale; }, sendWa: sendWa, onApply: null };
   apply();
 })();

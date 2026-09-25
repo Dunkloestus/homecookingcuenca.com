@@ -31,6 +31,15 @@ Open  js/config.js  in a text editor.
 
 Save the file and upload it again. Nothing else needs rebuilding.
 
+ONLINE ORDERS
+-------------
+The menu, prices, available dishes and delivery days are managed in the kitchen
+dashboard (Pájaro y Bestia → Restaurantes → Home Cooking Cuenca). Orders placed
+on this site go straight to that kitchen, and the customer follows the order
+live in the order panel. If the kitchen cannot be reached, the site falls back
+to the original menu and the WhatsApp order message.
+To turn online orders off, set  kitchenApi: ""  in js/config.js.
+
 ENGLISH / SPANISH
 -----------------
 The EN | ES buttons are in the header. The choice is remembered in the visitor’s browser.
@@ -39,7 +48,8 @@ WHAT IS IN THIS FOLDER
 ----------------------
 index.html     the page
 css/           styles + local fonts
-js/            language, menu, order form, config
+js/            language, menu, order form, online orders, config
+vendor/        map library (Leaflet), local like the fonts
 img/           kitchen photo, dishes, logos
 fonts/         Cormorant Garamond + Outfit (so the site does not depend on Google)
 favicon.svg    tab icon
@@ -73,3 +83,11 @@ Abra  js/config.js
   orderSiteUrl:    la tienda de pedidos, cuando exista.
 
 Guarde y vuelva a subir ese archivo.
+
+PEDIDOS EN LÍNEA
+----------------
+El menú, precios, platos disponibles y días de entrega se manejan desde el panel
+de la cocina (Pájaro y Bestia → Restaurantes → Home Cooking Cuenca). Los pedidos
+de este sitio llegan directo a esa cocina y el cliente sigue su pedido en vivo.
+Si la cocina no responde, el sitio vuelve al menú original y al mensaje de WhatsApp.
+Para apagar los pedidos en línea: kitchenApi: ""  en js/config.js.

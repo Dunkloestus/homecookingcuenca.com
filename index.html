@@ -211,8 +211,10 @@
         <button type="button" class="icon-btn" data-close-order data-i18n-aria="close">✕</button>
       </div>
       <div class="panel-body">
+        <div id="order-track" hidden></div>
+        <div id="order-form">
         <p class="kicker" data-i18n="deliveryDay"></p>
-        <div class="runs">
+        <div class="runs" id="runs">
           <button type="button" class="run active" data-run="thursday"><span id="run-thu-label"></span><small id="run-thu-due"></small></button>
           <button type="button" class="run" data-run="sunday"><span id="run-sun-label"></span><small id="run-sun-due"></small></button>
         </div>
@@ -223,11 +225,29 @@
         <p class="kicker" style="margin-top:1.5rem" data-i18n="addItems"></p>
         <ul id="order-items" style="list-style:none;padding:0;margin:0"></ul>
         <label class="field"><span data-i18n="yourName"></span><input id="f-name" autocomplete="name"></label>
-        <label class="field"><span data-i18n="neighborhood"></span><input id="f-area" data-i18n-placeholder="areaPh"></label>
+        <label class="field live-only" hidden><span data-i18n="phone"></span><input id="f-phone" type="tel" autocomplete="tel" data-i18n-placeholder="phonePh"></label>
+        <label class="field"><span id="f-area-label" data-i18n="neighborhood"></span><input id="f-area" data-i18n-placeholder="areaPh"></label>
+        <div class="live-only" hidden>
+          <div class="map" id="f-map"></div>
+          <div class="map-row"><span class="hint" id="map-hint" data-i18n="mapHint"></span><button type="button" class="btn btn-outline map-locate" id="f-locate" data-i18n="useLocation"></button></div>
+        </div>
         <label class="field"><span data-i18n="howMany"></span><input id="f-servings" value="1"></label>
         <label class="field"><span data-i18n="notes"></span><textarea id="f-notes" data-i18n-placeholder="notesPh"></textarea></label>
+        <div class="live-only" hidden>
+          <p class="kicker" style="margin-top:1.5rem" data-i18n="payment"></p>
+          <div class="runs">
+            <button type="button" class="run active" data-pay="EFECTIVO"><span data-i18n="payCash"></span></button>
+            <button type="button" class="run" data-pay="TRANSFERENCIA"><span data-i18n="payTransfer"></span></button>
+          </div>
+          <div id="billing" hidden>
+            <label class="field"><span data-i18n="billingId"></span><input id="f-billing-id" inputmode="numeric"></label>
+            <label class="field"><span data-i18n="billingName"></span><input id="f-billing-name"></label>
+          </div>
+        </div>
+        </div>
       </div>
       <div class="panel-foot">
+        <dl class="totals live-only" id="totals" hidden></dl>
         <p class="hint" id="checkout-hint"></p>
         <button type="button" class="btn btn-oxblood btn-full" id="wa-primary"></button>
         <button type="button" class="btn btn-outline btn-full" id="copy-msg" style="margin-top:.5rem" data-i18n="copyMsg"></button>
@@ -239,5 +259,6 @@
   <script src="js/i18n.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/site.js"></script>
+  <script src="js/order-live.js"></script>
 </body>
 </html>
